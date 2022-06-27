@@ -1,0 +1,145 @@
+.header{
+    position: fixed;
+    width: 100%;
+    background-color: $white;
+    top: 0;
+
+    @include breakpoint-up(lg){
+        // padding: 1.5rem 1.5rem 0.8rem;
+    }
+    
+    &__overlay{
+        position: fixed;
+        right: 0;
+        left: 0;
+    }
+
+    // Hamburger open styles
+    &.open{
+    
+        .header__menu{
+            > span:first-child{
+                transform: rotate(45deg);
+                margin-bottom: 3.3px;
+            }
+            
+            > span:nth-child(2){
+                opacity: 0;
+                margin-bottom: 3.3px;
+            }
+            
+            > span:last-child{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    nav{
+
+        @include breakpoint-up(lg){
+            justify-content: space-between;
+        }
+    }
+
+    &__logo{
+        img{
+            height: 2.0625rem;
+        }
+    }
+
+    &__links{
+
+        a{
+            @include breakpoint-up(lg){
+                margin-right: 1.5rem;
+                transition: color 200ms ease;
+            }
+
+            &:hover{
+
+                @include breakpoint-up(lg){
+                    color: black;
+                }
+            }
+        }
+        
+    }
+
+    &__account{
+        margin-left: 16rem;
+
+        a:first-child{
+            @include breakpoint-up(lg){
+                margin-right: 1.5rem;
+                transition: color 200ms ease;
+            }
+
+            &:hover{
+
+                @include breakpoint-up(lg){
+                    color: black;
+                }
+            }
+        }
+
+        a:last-child{
+            color: $white;
+            transition: opacity 200ms ease;
+
+            &:hover{
+
+                @include breakpoint-up(lg){
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+
+    &__menu{
+        > span{
+            display: block;
+            width: 1.25rem;
+            height: 3px;
+            background-color: $grayishViolet;
+            transform-origin: 1px 1px;
+            transition: all 300ms ease-in-out;
+
+            &:not(:last-child){
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    &__overlay{
+        visibility: hidden;
+        opacity: 0;
+        width: 85vw;
+        height: 55vh;
+        margin: auto;
+        margin-top: 1rem;
+        border-radius: 3%;
+        flex-direction: column;
+        background-color: $darkViolet;
+
+        a{
+            color: $white;
+            font-weight: 700;
+
+            &:not(:last-child){
+                margin-bottom: 2.1875rem;
+            }
+
+            &:nth-child(3){
+                padding: 0 5rem 2.1875rem;
+                border-bottom: 0.2px solid $grayishViolet;
+            }
+
+            &:nth-child(5){
+                display: inline-block;
+                padding: 0.9rem 5.9375rem;
+                border-radius: 1.875rem;
+                background-color: $cyan;
+            }
+        }
+    }
+}
