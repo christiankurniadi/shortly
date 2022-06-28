@@ -1,14 +1,11 @@
 .features{
-    // position: relative;
     background-color: $gray2;
-    // height: 100vh;
     text-align: center;
     color: $grayishViolet;
+    flex-direction: column;
     
 
     &__shortlink{
-        // top: -10%;
-        // position: absolute;
         margin-top: -35%;
         flex-direction: column;
         width: 90vw;
@@ -34,17 +31,8 @@
             font-family: 'Poppins', sans-serif;
           }
 
-        //   p{
-        //     // justify-self: flex-start;
-        //     // margin-right: 110px;
-        //     margin: -15px 145px 10px 0;
-        //     font-size: 14px;
-        //     color: red;
-        //     // text-align: left;
-        //   }
 
         button{
-            // padding: 15px 80px;
             width: 85%;
             font-family: 'Poppins', sans-serif;
             font-size: 1rem;
@@ -56,5 +44,19 @@
             height: 45px;
             margin-bottom: 25px;
         }
+    }
+
+    &__text{
+        margin-top: 4rem;
+
+        h2{
+            margin: 0;
+            font-weight: 700;
+            color: $veryDarkBlue;
+        }
+    }
+
+    &__cards{
+        
     }
 }

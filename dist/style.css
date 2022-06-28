@@ -308,6 +308,7 @@ a, a:visited, a:hover {
   background-color: #e6e6e6;
   text-align: center;
   color: #9e9aa7;
+  flex-direction: column;
 }
 .features__shortlink {
   margin-top: -35%;
@@ -344,6 +345,14 @@ a, a:visited, a:hover {
   font-weight: 700;
   height: 45px;
   margin-bottom: 25px;
+}
+.features__text {
+  margin-top: 4rem;
+}
+.features__text h2 {
+  margin: 0;
+  font-weight: 700;
+  color: #35323e;
 }
 
 /*# sourceMappingURL=style.css.map */
