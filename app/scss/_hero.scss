@@ -5,6 +5,7 @@
 
     @include breakpoint-up(lg){
         flex-direction: row-reverse;
+        padding-bottom: 7rem;
     }
     
     .img_wrapper{
