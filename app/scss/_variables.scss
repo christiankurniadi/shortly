@@ -1,4 +1,5 @@
 // Font sizes
+$font-sm: 0.875rem; // 14px
 $font-md: 1.125rem; // 18px
 $font-lg: 2.5rem; // 40px
 $font-xl: 3.125rem; // 50px
@@ -15,7 +16,7 @@ $white: #fff;
 
 // Neutral
 $gray: hsl(0, 0%, 75%);
-$gray2: hsl(0, 0%, 90%);
+$gray2: hsl(225,33%,95%);
 $grayishViolet: hsl(257, 7%, 63%);
 $veryDarkBlue: hsl(255, 11%, 22%);
 $veryDarkViolet: hsl(260, 8%, 14%);

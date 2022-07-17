@@ -73,6 +73,10 @@
     &__text{
         margin-top: 4rem;
 
+        @include breakpoint-up(lg){
+            width: 40%;
+        }
+
         h2{
             margin: 0;
             font-weight: 700;
@@ -82,6 +86,14 @@
 
     &__cards{
         position: relative;
+
+        @include breakpoint-up(lg){
+            display: flex;
+            align-items: center;
+            // justify-content: space-between;
+
+        }
+
         .card{
             z-index: 1;
             position: inherit;
@@ -96,17 +108,43 @@
             flex-direction: column;
             align-items: center;
             
+            @include breakpoint-up(lg){
+                display: block;
+                width: 320px;
+                margin-right: 1rem;
+                margin-top: 0;
+                height: 250px;
+                text-align: left;
+            }
+
+            &.card:nth-child(2){
+                @include breakpoint-up(lg){
+                    margin-top: 5rem;
+                }
+            }
+
+            &.card:nth-child(3){
+                @include breakpoint-up(lg){
+                    margin-top: 10rem;
+                }
+            }
+            
             .img-wrapper{
                 margin-top: -5rem;
-                width: 90px;
-                height: 90px;
+                width: 70px;
+                height: 70px;
                 background-color: $darkViolet;
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                @include breakpoint-up(lg){
+                    margin-left: 0rem;
+                }
+
                 img{
-                    width: 50px;
+                    width: 40px;
 
                 }
             }
@@ -115,10 +153,18 @@
             h3{
                 color: $veryDarkBlue;
                 margin: 2rem 0 1.7rem 0;
+
+                @include breakpoint-up(lg){
+                    margin: 1.5rem 0 1rem 0;
+                }
             }
 
             p{
                 margin: 0;
+
+                @include breakpoint-up(lg){
+                    font-size: $font-sm
+                }
             }
         }
     }
@@ -135,5 +181,12 @@
         position: absolute;
         height: 45rem;
         background-color: $cyan;
+
+        @include breakpoint-up(lg){
+            height: .5rem;
+            width: 45rem;
+            top: 60%;
+            // bottom: 50%;
+        }
     }
 }

@@ -307,7 +307,7 @@ a, a:visited, a:hover {
   color: #fff;
 }
 .features {
-  background-color: #e6e6e6;
+  background-color: #eef0f6;
   text-align: center;
   color: #9e9aa7;
   flex-direction: column;
@@ -378,6 +378,11 @@ a, a:visited, a:hover {
 .features__text {
   margin-top: 4rem;
 }
+@media (min-width: 64em) {
+  .features__text {
+    width: 40%;
+  }
+}
 .features__text h2 {
   margin: 0;
   font-weight: 700;
@@ -385,6 +390,12 @@ a, a:visited, a:hover {
 }
 .features__cards {
   position: relative;
+}
+@media (min-width: 64em) {
+  .features__cards {
+    display: flex;
+    align-items: center;
+  }
 }
 .features__cards .card {
   z-index: 1;
@@ -400,25 +411,60 @@ a, a:visited, a:hover {
   flex-direction: column;
   align-items: center;
 }
+@media (min-width: 64em) {
+  .features__cards .card {
+    display: block;
+    width: 320px;
+    margin-right: 1rem;
+    margin-top: 0;
+    height: 250px;
+    text-align: left;
+  }
+}
+@media (min-width: 64em) {
+  .features__cards .card.card:nth-child(2) {
+    margin-top: 5rem;
+  }
+}
+@media (min-width: 64em) {
+  .features__cards .card.card:nth-child(3) {
+    margin-top: 10rem;
+  }
+}
 .features__cards .card .img-wrapper {
   margin-top: -5rem;
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   background-color: #3b3054;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 64em) {
+  .features__cards .card .img-wrapper {
+    margin-left: 0rem;
+  }
+}
 .features__cards .card .img-wrapper img {
-  width: 50px;
+  width: 40px;
 }
 .features__cards .card h3 {
   color: #35323e;
   margin: 2rem 0 1.7rem 0;
 }
+@media (min-width: 64em) {
+  .features__cards .card h3 {
+    margin: 1.5rem 0 1rem 0;
+  }
+}
 .features__cards .card p {
   margin: 0;
+}
+@media (min-width: 64em) {
+  .features__cards .card p {
+    font-size: 0.875rem;
+  }
 }
 .features__cards::before {
   content: "";
@@ -432,6 +478,13 @@ a, a:visited, a:hover {
   position: absolute;
   height: 45rem;
   background-color: #2acfcf;
+}
+@media (min-width: 64em) {
+  .features__cards::before {
+    height: 0.5rem;
+    width: 45rem;
+    top: 60%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
