@@ -519,6 +519,14 @@ a, a:visited, a:hover {
   background-color: #232127;
   text-align: center;
 }
+@media (min-width: 64em) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    text-align: left;
+  }
+}
 .footer img {
   margin: 2rem 0 1rem 0;
 }

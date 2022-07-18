@@ -5,6 +5,13 @@
     background-color: $veryDarkViolet;
     text-align: center;
 
+    @include breakpoint-up(lg){
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        text-align: left;
+    }
+
     img{
         margin: 2rem 0 1rem 0;
     }
