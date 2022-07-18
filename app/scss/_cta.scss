@@ -1,0 +1,25 @@
+.cta{
+    background-color: $darkViolet;
+    background-image: url(/images/bg-boost-mobile.svg);
+    background-size: cover;
+    height: 300px;
+    flex-direction: column;
+    
+    @include breakpoint-up(lg){
+        height: 250px;
+        background-image: url(/images/bg-boost-desktop.svg);
+        background-size: cover;
+    }
+
+    h3{
+        color: $white;
+        margin: 0;
+        margin-bottom: 25px;
+        font-size: 25px;
+    }
+
+    a{
+        color: $white;
+        padding: 0.9rem 3rem;
+    }
+}

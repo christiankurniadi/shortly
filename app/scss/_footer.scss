@@ -1,0 +1,83 @@
+.footer{
+    flex-direction: column;
+    height: 100%;
+    color: $gray;
+    background-color: $veryDarkViolet;
+    text-align: center;
+
+    img{
+        margin: 2rem 0 1rem 0;
+    }
+
+    h4{
+        color: $white;
+        margin: 2rem 0;
+    }
+
+    a{
+        font-weight: 300;
+    }
+
+    &__features{
+        flex-direction: column;
+
+        
+
+        a:not(:last-child){
+            margin-bottom: 1rem;
+        }
+    }
+    &__resources{
+        flex-direction: column;
+        a:not(:last-child){
+            margin-bottom: 1rem;
+        }
+    }
+    &__company{
+        flex-direction: column;
+        a{
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__icons{
+        margin: 2rem 0;
+
+        i:not(:last-child){
+            margin-right: 1rem;
+        }
+
+        .facebook{
+            width: 26px;
+            height: 26px;
+            background-image: url(/images/icon-facebook.svg);
+            background-repeat: no-repeat;
+            display: inline-block;
+
+        }
+        .twitter{
+            width: 26px;
+            height: 26px;
+            background-image: url(/images/icon-twitter.svg);
+            display: inline-block;
+            background-repeat: no-repeat;
+
+        }
+        .pinterest{
+            width: 26px;
+            height: 26px;
+            background-image: url(/images/icon-pinterest.svg);
+            display: inline-block;
+            background-repeat: no-repeat;
+
+        }
+        .instagram{
+            width: 26px;
+            height: 26px;
+            background-image: url(/images/icon-instagram.svg);
+            background-repeat: no-repeat;
+            display: inline-block;
+
+        }
+    }
+}
