@@ -16,11 +16,18 @@ btnHamburger.addEventListener("click", function () {
 })
 
 const shorten = document.querySelector(".shortenBtn")
-const feature = document.querySelector(".features")
+const feature = document.querySelector(".features__shortlink")
+const shortened = document.createElement("a")
 
 shorten.addEventListener("click", function () {
   const inputKeyword = document.querySelector(".input-keyword")
   fetch("https://api.shrtco.de/v2/shorten?url=" + inputKeyword.value)
     .then((response) => response.json())
-    .then((data) => console.log(data.result.full_short_link))
+    .then((data) => (shortened.innerHTML = data.result.full_short_link))
+
+  setTimeout(function () {
+    shortened.setAttribute("href", `${shortened.innerHTML}`)
+    shortened.setAttribute("target", "_blank")
+    feature.appendChild(shortened)
+  }, 1000)
 })
