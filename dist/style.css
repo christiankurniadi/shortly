@@ -487,6 +487,11 @@ a, a:visited, a:hover {
   }
 }
 
+.shortened {
+  display: flex;
+  justify-content: space-between;
+}
+
 .cta {
   background-color: #3b3054;
   background-image: url(/images/bg-boost-mobile.svg);

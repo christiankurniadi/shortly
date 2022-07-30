@@ -19,15 +19,33 @@ const shorten = document.querySelector(".shortenBtn")
 const feature = document.querySelector(".features__shortlink")
 const shortened = document.createElement("a")
 
-shorten.addEventListener("click", function () {
+shorten.addEventListener("click", async function () {
   const inputKeyword = document.querySelector(".input-keyword")
-  fetch("https://api.shrtco.de/v2/shorten?url=" + inputKeyword.value)
-    .then((response) => response.json())
-    .then((data) => (shortened.innerHTML = data.result.full_short_link))
+  const shortlink = await getShortlink(inputKeyword.value)
+  console.log(shortlink)
+  updateUI(shortlink)
 
-  setTimeout(function () {
-    shortened.setAttribute("href", `${shortened.innerHTML}`)
-    shortened.setAttribute("target", "_blank")
-    feature.appendChild(shortened)
-  }, 1000)
+  // setTimeout(function () {
+  //   shortened.setAttribute("href", `${shortened.innerHTML}`)
+  //   shortened.setAttribute("target", "_blank")
+  //   feature.appendChild(shortened)
+  // }, 1000)
 })
+
+function getShortlink(keyword) {
+  return fetch("https://api.shrtco.de/v2/shorten?url=" + keyword)
+    .then((response) => response.json())
+    .then((response) => response.result)
+}
+
+function updateUI(m) {
+  const shortenedLink = showDiv(m)
+  const shortenedDiv = document.querySelector(".shortened")
+  shortenedDiv.innerHTML = shortenedLink
+}
+
+function showDiv(m) {
+  return `  <p class="shortlink">${m.short_link}</p>
+            <p class="longVersion">${m.original_link}</p>
+          `
+}
