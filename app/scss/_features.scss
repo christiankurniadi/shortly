@@ -203,16 +203,43 @@
         display: flex;
         width: 100%;
         justify-content: space-between;
+        align-items: center;
+        text-align: left;
         
         .longVersion{
             font-weight: 300;
             color: $veryDarkBlue;
+            overflow: hidden;
+            width: 100%;
         }
         
-        .shortlink{
-            font-weight: 300;
-            color: $cyan;
-        }
+        .link-wrapper{
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
 
+            .shortlink{
+                font-weight: 300;
+                color: $cyan;
+                margin-right: 1rem;
+            }
+    
+            .copyBtn{
+                cursor: pointer;
+                width: 15%;
+                font-family: 'Poppins', sans-serif;
+                font-size: 1rem;
+                color: $white;
+                background-color: $cyan;
+                border: 0;
+                border-radius: 4px;
+                font-weight: 700;
+                height: 40px;
+                
+                
+            }
+        }
+        
     }
 }

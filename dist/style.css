@@ -498,14 +498,37 @@ a, a:visited, a:hover {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+  text-align: left;
 }
 .shortened-link-wrapper .longVersion {
   font-weight: 300;
   color: #35323e;
+  overflow: hidden;
+  width: 100%;
 }
-.shortened-link-wrapper .shortlink {
+.shortened-link-wrapper .link-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.shortened-link-wrapper .link-wrapper .shortlink {
   font-weight: 300;
   color: #2acfcf;
+  margin-right: 1rem;
+}
+.shortened-link-wrapper .link-wrapper .copyBtn {
+  cursor: pointer;
+  width: 15%;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #2acfcf;
+  border: 0;
+  border-radius: 4px;
+  font-weight: 700;
+  height: 40px;
 }
 
 .cta {

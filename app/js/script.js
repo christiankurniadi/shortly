@@ -38,10 +38,21 @@ function updateUI(m) {
   shortenedDiv.innerHTML += shortenedLink
 }
 
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("copyBtn")) {
+    const copyLink = e.target.dataset.link
+    console.log(copyLink)
+    navigator.clipboard.writeText(copyLink)
+  }
+})
+
 function showDiv(m) {
   return `<div class="shortened-link-wrapper">
             <a href="${m.original_link}" target="_blank" class="longVersion">${m.original_link}</a>
-            <a href="${m.full_short_link}" target="_blank" class="shortlink">${m.full_short_link}</a>
+            <div class="link-wrapper">
+            <a href="${m.full_short_link}" target="_blank" class="shortlink">${m.short_link}</a>
+            <button class="copyBtn" data-link="${m.full_short_link}">Copy</button>
+            </div>
           </div>
           `
 }
