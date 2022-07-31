@@ -192,6 +192,27 @@
 }
 
 .shortened{
-    display: flex;
-    justify-content: space-between;
+    // overflow: hidden;
+    width: 80vw;
+    
+    &-link-wrapper{
+        margin: 1rem auto;
+        border-radius: 5px;
+        padding: 1.3rem;
+        background-color: $white;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        
+        .longVersion{
+            font-weight: 300;
+            color: $veryDarkBlue;
+        }
+        
+        .shortlink{
+            font-weight: 300;
+            color: $cyan;
+        }
+
+    }
 }

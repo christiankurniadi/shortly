@@ -488,8 +488,24 @@ a, a:visited, a:hover {
 }
 
 .shortened {
+  width: 80vw;
+}
+.shortened-link-wrapper {
+  margin: 1rem auto;
+  border-radius: 5px;
+  padding: 1.3rem;
+  background-color: #fff;
   display: flex;
+  width: 100%;
   justify-content: space-between;
+}
+.shortened-link-wrapper .longVersion {
+  font-weight: 300;
+  color: #35323e;
+}
+.shortened-link-wrapper .shortlink {
+  font-weight: 300;
+  color: #2acfcf;
 }
 
 .cta {

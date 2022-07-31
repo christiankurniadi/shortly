@@ -24,12 +24,6 @@ shorten.addEventListener("click", async function () {
   const shortlink = await getShortlink(inputKeyword.value)
   console.log(shortlink)
   updateUI(shortlink)
-
-  // setTimeout(function () {
-  //   shortened.setAttribute("href", `${shortened.innerHTML}`)
-  //   shortened.setAttribute("target", "_blank")
-  //   feature.appendChild(shortened)
-  // }, 1000)
 })
 
 function getShortlink(keyword) {
@@ -41,11 +35,13 @@ function getShortlink(keyword) {
 function updateUI(m) {
   const shortenedLink = showDiv(m)
   const shortenedDiv = document.querySelector(".shortened")
-  shortenedDiv.innerHTML = shortenedLink
+  shortenedDiv.innerHTML += shortenedLink
 }
 
 function showDiv(m) {
-  return `  <p class="shortlink">${m.short_link}</p>
-            <p class="longVersion">${m.original_link}</p>
+  return `<div class="shortened-link-wrapper">
+            <a href="${m.original_link}" target="_blank" class="longVersion">${m.original_link}</a>
+            <a href="${m.short_link}" target="_blank" class="shortlink">${m.short_link}</a>
+          </div>
           `
 }
