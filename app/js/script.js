@@ -41,7 +41,7 @@ function updateUI(m) {
 function showDiv(m) {
   return `<div class="shortened-link-wrapper">
             <a href="${m.original_link}" target="_blank" class="longVersion">${m.original_link}</a>
-            <a href="${m.short_link}" target="_blank" class="shortlink">${m.short_link}</a>
+            <a href="${m.full_short_link}" target="_blank" class="shortlink">${m.full_short_link}</a>
           </div>
           `
 }
