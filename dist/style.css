@@ -318,7 +318,7 @@ a, a:visited, a:hover {
   width: 90vw;
   border-radius: 10px;
   height: 100%;
-  background-image: url(/images/bg-shorten-mobile.svg);
+  background-image: url(../images/bg-shorten-mobile.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 80px -30px;
@@ -326,7 +326,7 @@ a, a:visited, a:hover {
 }
 @media (min-width: 64em) {
   .features__shortlink {
-    background-image: url(/images/bg-shorten-desktop.svg);
+    background-image: url(../images/bg-shorten-desktop.svg);
     background-size: cover;
     background-position: 0 -10px;
     margin-top: -9%;
@@ -533,7 +533,7 @@ a, a:visited, a:hover {
 
 .cta {
   background-color: #3b3054;
-  background-image: url(/images/bg-boost-mobile.svg);
+  background-image: url(../images/bg-boost-mobile.svg);
   background-size: cover;
   height: 300px;
   flex-direction: column;
@@ -541,7 +541,7 @@ a, a:visited, a:hover {
 @media (min-width: 64em) {
   .cta {
     height: 250px;
-    background-image: url(/images/bg-boost-desktop.svg);
+    background-image: url(../images/bg-boost-desktop.svg);
     background-size: cover;
   }
 }
@@ -608,28 +608,28 @@ a, a:visited, a:hover {
 .footer__icons .facebook {
   width: 26px;
   height: 26px;
-  background-image: url(/images/icon-facebook.svg);
+  background-image: url(../images/icon-facebook.svg);
   background-repeat: no-repeat;
   display: inline-block;
 }
 .footer__icons .twitter {
   width: 26px;
   height: 26px;
-  background-image: url(/images/icon-twitter.svg);
+  background-image: url(../images/icon-twitter.svg);
   display: inline-block;
   background-repeat: no-repeat;
 }
 .footer__icons .pinterest {
   width: 26px;
   height: 26px;
-  background-image: url(/images/icon-pinterest.svg);
+  background-image: url(../images/icon-pinterest.svg);
   display: inline-block;
   background-repeat: no-repeat;
 }
 .footer__icons .instagram {
   width: 26px;
   height: 26px;
-  background-image: url(/images/icon-instagram.svg);
+  background-image: url(../images/icon-instagram.svg);
   background-repeat: no-repeat;
   display: inline-block;
 }

@@ -1,13 +1,13 @@
 .cta{
     background-color: $darkViolet;
-    background-image: url(/images/bg-boost-mobile.svg);
+    background-image: url(../images/bg-boost-mobile.svg);
     background-size: cover;
     height: 300px;
     flex-direction: column;
     
     @include breakpoint-up(lg){
         height: 250px;
-        background-image: url(/images/bg-boost-desktop.svg);
+        background-image: url(../images/bg-boost-desktop.svg);
         background-size: cover;
     }
 
