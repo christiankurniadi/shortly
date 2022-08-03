@@ -18,15 +18,26 @@ btnHamburger.addEventListener("click", function () {
 const shorten = document.querySelector(".shortenBtn")
 const feature = document.querySelector(".features__shortlink")
 const shortened = document.createElement("a")
+const inputKeyword = document.querySelector(".input-keyword")
 
 shorten.addEventListener("click", async function () {
-  const inputKeyword = document.querySelector(".input-keyword")
-  const shortlink = await getShortlink(inputKeyword.value)
-  console.log(shortlink)
-  updateUI(shortlink)
+  try {
+    const shortlink = await getShortlink(inputKeyword.value)
+    updateUI(shortlink)
+  } catch (err) {
+    console.log(err)
+  }
 })
 
 function getShortlink(keyword) {
+  if (keyword == "") {
+    console.log("empty")
+    // inputKeyword.style.border = "3px solid red"
+    // inputKeyword.classList.add("error")
+    // const para = document.createElement("p")
+    // para.innerText = "Input link bla bla bla"
+    // para.insertAdjacentElement(inputKeyword, shorten)
+  }
   return fetch("https://api.shrtco.de/v2/shorten?url=" + keyword)
     .then((response) => response.json())
     .then((response) => response.result)
@@ -48,7 +59,7 @@ document.addEventListener("click", function (e) {
 
 function showDiv(m) {
   return `<div class="shortened-link-wrapper">
-            <a href="${m.original_link}" target="_blank" class="longVersion">${m.original_link}</a>
+            <p  class="longVersion">${m.original_link}</p>
             <div class="link-wrapper">
             <a href="${m.full_short_link}" target="_blank" class="shortlink">${m.short_link}</a>
             <button class="copyBtn" data-link="${m.full_short_link}">Copy</button>
