@@ -193,31 +193,54 @@
 
 .shortened{
     // overflow: hidden;
-    width: 80vw;
+    width: 90vw;
+
+    @include breakpoint-up(lg){
+        width: 80vw;
+    }
     
     &-link-wrapper{
-        margin: 1rem auto;
-        border-radius: 5px;
-        padding: 1.3rem;
-        background-color: $white;
         display: flex;
-        width: 100%;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $white;
         align-items: center;
         text-align: left;
+        width: 100%;
+        border-radius: 10px;
+        margin: 1rem auto;
+        padding: 1.3rem;
+        
+        @include breakpoint-up(lg){
+            flex-direction: row;
+            justify-content: space-between;
+        }
         
         .longVersion{
             font-weight: 300;
             color: $veryDarkBlue;
             overflow: hidden;
             width: 100%;
+            margin: 0;
+            border-bottom: 1px solid black;
+            padding-bottom: 1rem;
+
+            @include breakpoint-up(lg){
+                margin: 1rem 0;
+            }
         }
         
         .link-wrapper{
-            width: 100%;
             display: flex;
-            justify-content: end;
-            align-items: center;
+            flex-direction: column;
+            justify-content: start;
+            width: 100%;
+            margin-top: 1rem;
+
+            @include breakpoint-up(lg){
+                justify-content: end;
+                align-items: center;
+            }
 
             .shortlink{
                 font-weight: 300;
@@ -227,7 +250,8 @@
     
             .copyBtn{
                 cursor: pointer;
-                width: 15%;
+                width: 100%;
+                margin-top: 1rem;
                 font-family: 'Poppins', sans-serif;
                 font-size: 1rem;
                 color: $white;
@@ -237,7 +261,11 @@
                 font-weight: 700;
                 height: 40px;
                 
-                
+                @include breakpoint-up(lg){
+                    justify-content: end;
+                    align-items: center;
+                    width: 15%;
+                }
             }
         }
         
