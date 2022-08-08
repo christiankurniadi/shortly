@@ -346,7 +346,7 @@ a, a:visited, a:hover {
   width: 85%;
   height: 45px;
   border-radius: 4px;
-  border: 0;
+  border: none;
 }
 @media (min-width: 64em) {
   .features__shortlink input {
@@ -530,6 +530,8 @@ a, a:visited, a:hover {
 @media (min-width: 64em) {
   .shortened-link-wrapper .longVersion {
     margin: 1rem 0;
+    padding-bottom: 0;
+    border: none;
   }
 }
 .shortened-link-wrapper .link-wrapper {
@@ -543,6 +545,8 @@ a, a:visited, a:hover {
   .shortened-link-wrapper .link-wrapper {
     justify-content: end;
     align-items: center;
+    margin-top: 0;
+    flex-direction: row;
   }
 }
 .shortened-link-wrapper .link-wrapper .shortlink {
@@ -568,7 +572,17 @@ a, a:visited, a:hover {
     justify-content: end;
     align-items: center;
     width: 15%;
+    margin-top: 0;
   }
+}
+
+.error {
+  border: 3px solid red;
+}
+
+.error_message {
+  width: 100%;
+  text-align: left;
 }
 
 .cta {

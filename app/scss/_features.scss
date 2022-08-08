@@ -33,7 +33,7 @@
             width: 85%;
             height: 45px;
             border-radius: 4px;
-            border: 0;
+            border: none;
 
             @include breakpoint-up(lg){
                 margin: 2.5rem 1rem 2.5rem 3rem;
@@ -42,6 +42,8 @@
             }
             
         }
+
+
         ::placeholder {
             font-size: 16px;
             font-family: 'Poppins', sans-serif;
@@ -227,6 +229,8 @@
 
             @include breakpoint-up(lg){
                 margin: 1rem 0;
+                padding-bottom: 0;
+                border: none;
             }
         }
         
@@ -240,12 +244,19 @@
             @include breakpoint-up(lg){
                 justify-content: end;
                 align-items: center;
+                margin-top: 0;
+                flex-direction: row;
             }
-
+            
             .shortlink{
                 font-weight: 300;
                 color: $cyan;
                 margin-right: 1rem;
+                
+                @include breakpoint-up(lg){
+                    // margin: 0;
+                }
+
             }
     
             .copyBtn{
@@ -265,9 +276,19 @@
                     justify-content: end;
                     align-items: center;
                     width: 15%;
+                    margin-top: 0;
                 }
             }
         }
         
     }
+}
+
+.error{
+    border: 3px solid red;
+}
+
+.error_message{
+    width: 100%;
+    text-align: left;
 }

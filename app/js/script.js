@@ -18,26 +18,26 @@ btnHamburger.addEventListener("click", function () {
 const shorten = document.querySelector(".shortenBtn")
 const feature = document.querySelector(".features__shortlink")
 const shortened = document.createElement("a")
+const errorMessage = document.querySelector(".error_message")
 const inputKeyword = document.querySelector(".input-keyword")
 
 shorten.addEventListener("click", async function () {
   try {
-    const shortlink = await getShortlink(inputKeyword.value)
-    updateUI(shortlink)
+    if (inputKeyword.value == "") {
+      inputKeyword.classList.add("error")
+      errorMessage.innerHTML = "Input kossonggg"
+    } else {
+      errorMessage.innerHTML = ""
+      inputKeyword.classList.remove("error")
+      const shortlink = await getShortlink(inputKeyword.value)
+      updateUI(shortlink)
+    }
   } catch (err) {
     console.log(err)
   }
 })
 
 function getShortlink(keyword) {
-  if (keyword == "") {
-    console.log("empty")
-    // inputKeyword.style.border = "3px solid red"
-    // inputKeyword.classList.add("error")
-    // const para = document.createElement("p")
-    // para.innerText = "Input link bla bla bla"
-    // para.insertAdjacentElement(inputKeyword, shorten)
-  }
   return fetch("https://api.shrtco.de/v2/shorten?url=" + keyword)
     .then((response) => response.json())
     .then((response) => response.result)
