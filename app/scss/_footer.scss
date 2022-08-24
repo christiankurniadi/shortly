@@ -12,6 +12,12 @@
         text-align: left;
     }
 
+    &__links{
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
     img{
         margin: 2rem 0 1rem 0;
     }
@@ -27,8 +33,6 @@
 
     &__features{
         flex-direction: column;
-
-        
 
         a:not(:last-child){
             margin-bottom: 1rem;

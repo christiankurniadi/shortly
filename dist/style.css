@@ -626,6 +626,9 @@ a, a:visited, a:hover {
     text-align: left;
   }
 }
+.footer__links:hover {
+  text-decoration: underline;
+}
 .footer img {
   margin: 2rem 0 1rem 0;
 }
