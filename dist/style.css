@@ -583,6 +583,7 @@ a, a:visited, a:hover {
 .error_message {
   width: 100%;
   text-align: left;
+  display: none;
 }
 
 .cta {
