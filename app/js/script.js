@@ -26,6 +26,7 @@ shorten.addEventListener("click", async function () {
     if (inputKeyword.value == "") {
       inputKeyword.classList.add("error")
       errorMessage.innerHTML = "Input kossonggg"
+      errorMessage.style.display = "block"
     } else {
       errorMessage.innerHTML = ""
       inputKeyword.classList.remove("error")
