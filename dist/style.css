@@ -87,11 +87,6 @@ a, a:visited, a:hover {
   }
 }
 
-.error {
-  border: 3px solid red !important;
-  border-radius: 3px !important;
-}
-
 @keyframes fade-in {
   from {
     visibility: hidden;
@@ -328,6 +323,7 @@ a, a:visited, a:hover {
   background-size: contain;
   background-position: 80px -30px;
   background-color: #3b3054;
+  position: relative;
 }
 @media (min-width: 64em) {
   .features__shortlink {
@@ -577,13 +573,24 @@ a, a:visited, a:hover {
 }
 
 .error {
-  border: 3px solid red;
+  border: 3px solid #f46262 !important;
 }
 
 .error_message {
-  width: 100%;
   text-align: left;
   display: none;
+  top: 73px;
+  left: 28px;
+  position: absolute;
+  font-size: 0.875rem;
+  color: #f46262;
+  font-style: italic;
+}
+@media (min-width: 64em) {
+  .error_message {
+    top: 100px;
+    left: 50px;
+  }
 }
 
 .cta {

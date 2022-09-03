@@ -16,6 +16,7 @@
         background-size: contain;
         background-position: 80px -30px;
         background-color: $darkViolet;
+        position: relative;
         
         @include breakpoint-up(lg){
             background-image: url(../images/bg-shorten-desktop.svg);
@@ -286,12 +287,24 @@
 }
 
 .error{
-    border: 3px solid red;
+    border: 3px solid $red !important;
     
 }
 
 .error_message{
-    width: 100%;
+    // width: 100%;
     text-align: left;
     display: none;
+    top: 73px;
+    left: 28px;
+    position: absolute;
+    font-size: $font-sm;
+    color: $red;
+    font-style: italic;
+    
+    @include breakpoint-up(lg){
+        top: 100px;
+        left: 50px;
+        
+    }
 }
