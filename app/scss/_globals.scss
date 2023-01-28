@@ -98,3 +98,11 @@ a, a:visited, a:hover{
         display: none;
     }
 }
+
+.mt{
+    margin-top: 0.8rem;
+
+    @include breakpoint-up(lg){
+        margin-top: 0;
+    }
+}

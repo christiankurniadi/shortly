@@ -28,10 +28,13 @@ shorten.addEventListener("click", async function () {
       errorMessage.innerHTML = "Please add a link"
       errorMessage.style.display = "block"
       inputKeyword.style.color = "#f46262"
+      // shorten.style.marginTop = "0.8rem"
+      shorten.classList.add('mt')
       // inputKeyword.style.marginBottom = "30px"
     } else {
       errorMessage.innerHTML = ""
       inputKeyword.classList.remove("error")
+      shorten.classList.remove("mt")
       // inputKeyword.style.marginBottom = "15px"
       inputKeyword.style.color = "hsl(257, 7%, 63%)"
       const shortlink = await getShortlink(inputKeyword.value)

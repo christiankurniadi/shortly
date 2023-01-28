@@ -17,7 +17,7 @@ body {
 
 a, a:visited, a:hover {
   text-decoration: none;
-  color: #9e9aa7;
+  color: hsl(257deg, 7%, 63%);
   font-weight: 700;
 }
 
@@ -66,7 +66,7 @@ a, a:visited, a:hover {
 .btn {
   padding: 0.9rem 5.9375rem;
   border-radius: 1.875rem;
-  background-color: #2acfcf;
+  background-color: hsl(180deg, 66%, 49%);
 }
 @media (min-width: 64em) {
   .btn {
@@ -84,6 +84,15 @@ a, a:visited, a:hover {
 @media (min-width: 64em) {
   .hide-for-desktop {
     display: none;
+  }
+}
+
+.mt {
+  margin-top: 0.8rem;
+}
+@media (min-width: 64em) {
+  .mt {
+    margin-top: 0;
   }
 }
 
@@ -202,7 +211,7 @@ a, a:visited, a:hover {
   display: block;
   width: 1.25rem;
   height: 3px;
-  background-color: #9e9aa7;
+  background-color: hsl(257deg, 7%, 63%);
   transform-origin: 1px 1px;
   transition: all 300ms ease-in-out;
 }
@@ -218,7 +227,7 @@ a, a:visited, a:hover {
   margin-top: 1rem;
   border-radius: 3%;
   flex-direction: column;
-  background-color: #3b3054;
+  background-color: hsl(257deg, 27%, 26%);
 }
 .header__overlay a {
   color: #fff;
@@ -229,13 +238,13 @@ a, a:visited, a:hover {
 }
 .header__overlay a:nth-child(3) {
   padding: 0 5rem 2.1875rem;
-  border-bottom: 0.2px solid #9e9aa7;
+  border-bottom: 0.2px solid hsl(257deg, 7%, 63%);
 }
 .header__overlay a:nth-child(5) {
   display: inline-block;
   padding: 0.9rem 5.9375rem;
   border-radius: 1.875rem;
-  background-color: #2acfcf;
+  background-color: hsl(180deg, 66%, 49%);
 }
 
 .hero {
@@ -293,7 +302,7 @@ a, a:visited, a:hover {
   line-height: 1.6;
   margin: 1.875rem auto 0;
   width: 90%;
-  color: #9e9aa7;
+  color: hsl(257deg, 7%, 63%);
 }
 @media (min-width: 64em) {
   .hero__copy p {
@@ -307,9 +316,9 @@ a, a:visited, a:hover {
   color: #fff;
 }
 .features {
-  background-color: #eef0f6;
+  background-color: hsl(225deg, 33%, 95%);
   text-align: center;
-  color: #9e9aa7;
+  color: hsl(257deg, 7%, 63%);
   flex-direction: column;
 }
 .features__shortlink {
@@ -322,7 +331,7 @@ a, a:visited, a:hover {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 80px -30px;
-  background-color: #3b3054;
+  background-color: hsl(257deg, 27%, 26%);
   position: relative;
 }
 @media (min-width: 64em) {
@@ -361,7 +370,7 @@ a, a:visited, a:hover {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   color: #fff;
-  background-color: #2acfcf;
+  background-color: hsl(180deg, 66%, 49%);
   border: 0;
   border-radius: 4px;
   font-weight: 700;
@@ -387,7 +396,7 @@ a, a:visited, a:hover {
 .features__text h2 {
   margin: 0;
   font-weight: 700;
-  color: #35323e;
+  color: hsl(255deg, 11%, 22%);
 }
 .features__cards {
   position: relative;
@@ -436,7 +445,7 @@ a, a:visited, a:hover {
   margin-top: -5rem;
   width: 70px;
   height: 70px;
-  background-color: #3b3054;
+  background-color: hsl(257deg, 27%, 26%);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -451,7 +460,7 @@ a, a:visited, a:hover {
   width: 40px;
 }
 .features__cards .card h3 {
-  color: #35323e;
+  color: hsl(255deg, 11%, 22%);
   margin: 2rem 0 1.7rem 0;
 }
 @media (min-width: 64em) {
@@ -478,7 +487,7 @@ a, a:visited, a:hover {
   display: inline-block;
   position: absolute;
   height: 45rem;
-  background-color: #2acfcf;
+  background-color: hsl(180deg, 66%, 49%);
 }
 @media (min-width: 64em) {
   .features__cards::before {
@@ -516,7 +525,7 @@ a, a:visited, a:hover {
 }
 .shortened-link-wrapper .longVersion {
   font-weight: 300;
-  color: #35323e;
+  color: hsl(255deg, 11%, 22%);
   overflow: hidden;
   width: 100%;
   margin: 0;
@@ -547,7 +556,7 @@ a, a:visited, a:hover {
 }
 .shortened-link-wrapper .link-wrapper .shortlink {
   font-weight: 300;
-  color: #2acfcf;
+  color: hsl(180deg, 66%, 49%);
   margin-right: 1rem;
 }
 .shortened-link-wrapper .link-wrapper .copyBtn {
@@ -557,7 +566,7 @@ a, a:visited, a:hover {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   color: #fff;
-  background-color: #2acfcf;
+  background-color: hsl(180deg, 66%, 49%);
   border: 0;
   border-radius: 4px;
   font-weight: 700;
@@ -573,7 +582,7 @@ a, a:visited, a:hover {
 }
 
 .error {
-  border: 3px solid #f46262 !important;
+  border: 3px solid hsl(0deg, 87%, 67%) !important;
 }
 
 .error_message {
@@ -583,7 +592,7 @@ a, a:visited, a:hover {
   left: 28px;
   position: absolute;
   font-size: 0.875rem;
-  color: #f46262;
+  color: hsl(0deg, 87%, 67%);
   font-style: italic;
 }
 @media (min-width: 64em) {
@@ -594,7 +603,7 @@ a, a:visited, a:hover {
 }
 
 .cta {
-  background-color: #3b3054;
+  background-color: hsl(257deg, 27%, 26%);
   background-image: url(../images/bg-boost-mobile.svg);
   background-size: cover;
   height: 300px;
@@ -621,8 +630,8 @@ a, a:visited, a:hover {
 .footer {
   flex-direction: column;
   height: 100%;
-  color: #bfbfbf;
-  background-color: #232127;
+  color: hsl(0deg, 0%, 75%);
+  background-color: hsl(260deg, 8%, 14%);
   text-align: center;
 }
 @media (min-width: 64em) {
