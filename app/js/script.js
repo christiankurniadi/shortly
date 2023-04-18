@@ -1,77 +1,65 @@
+// Cache frequently used DOM elements
 const btnHamburger = document.querySelector("#btnHamburger")
 const header = document.querySelector(".header")
 const overlay = document.querySelector(".header__overlay")
-const body = document.querySelector("body")
+const body = document.body
+const shortenBtn = document.querySelector(".shortenBtn")
+const inputKeyword = document.querySelector(".input-keyword")
+const errorMessage = document.querySelector(".error_message")
+const shortenedDiv = document.querySelector(".shortened")
 
-btnHamburger.addEventListener("click", function () {
+// Add event listeners using arrow functions
+btnHamburger.addEventListener("click", () => {
   header.classList.toggle("open")
   overlay.classList.toggle("fade-in")
   overlay.classList.toggle("fade-out", !overlay.classList.contains("fade-in"))
-  // Overflow hidden
-  //   if (header.classList.contains("open")) {
-  //     body.classList.add("noscroll");
-  //   } else {
-  //     body.classList.remove("noscroll");
-  //   }
+  body.classList.toggle("noscroll", header.classList.contains("open"))
 })
 
-const shorten = document.querySelector(".shortenBtn")
-const feature = document.querySelector(".features__shortlink")
-const shortened = document.createElement("a")
-const errorMessage = document.querySelector(".error_message")
-const inputKeyword = document.querySelector(".input-keyword")
-
-shorten.addEventListener("click", async function () {
+shortenBtn.addEventListener("click", async () => {
   try {
-    if (inputKeyword.value == "") {
+    if (!inputKeyword.value) {
       inputKeyword.classList.add("error")
-      errorMessage.innerHTML = "Please add a link"
+      errorMessage.textContent = "Please add a link"
       errorMessage.style.display = "block"
       inputKeyword.style.color = "#f46262"
-      // shorten.style.marginTop = "0.8rem"
-      shorten.classList.add('mt')
-      // inputKeyword.style.marginBottom = "30px"
+      shortenBtn.classList.add("mt")
     } else {
-      errorMessage.innerHTML = ""
       inputKeyword.classList.remove("error")
-      shorten.classList.remove("mt")
-      // inputKeyword.style.marginBottom = "15px"
+      errorMessage.textContent = ""
       inputKeyword.style.color = "hsl(257, 7%, 63%)"
+      shortenBtn.classList.remove("mt")
       const shortlink = await getShortlink(inputKeyword.value)
-      updateUI(shortlink)
+      const shortenedLink = createShortenedLink(shortlink)
+      shortenedDiv.insertAdjacentHTML("beforeend", shortenedLink)
     }
-  } catch (err) {
-    console.log(err)
+  } catch (error) {
+    console.error(error)
   }
 })
 
-function getShortlink(keyword) {
-  return fetch("https://api.shrtco.de/v2/shorten?url=" + keyword)
-    .then((response) => response.json())
-    .then((response) => response.result)
-}
-
-function updateUI(m) {
-  const shortenedLink = showDiv(m)
-  const shortenedDiv = document.querySelector(".shortened")
-  shortenedDiv.innerHTML += shortenedLink
-}
-
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("copyBtn")) {
-    const copyLink = e.target.dataset.link
-    console.log(copyLink)
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("copyBtn")) {
+    const copyLink = event.target.dataset.link
     navigator.clipboard.writeText(copyLink)
   }
 })
 
-function showDiv(m) {
-  return `<div class="shortened-link-wrapper">
-            <p  class="longVersion">${m.original_link}</p>
-            <div class="link-wrapper">
-            <a href="${m.full_short_link}" target="_blank" class="shortlink">${m.short_link}</a>
-            <button class="copyBtn" data-link="${m.full_short_link}">Copy</button>
-            </div>
-          </div>
-          `
+// Use concise arrow function syntax
+const getShortlink = async (keyword) => {
+  const response = await fetch(
+    `https://api.shrtco.de/v2/shorten?url=${keyword}`
+  )
+  const data = await response.json()
+  return data.result
 }
+
+const createShortenedLink = (linkData) => `
+  <div class="shortened-link-wrapper">
+    <p class="longVersion">${linkData.original_link}</p>
+    <div class="link-wrapper">
+      <a href="${linkData.full_short_link}" target="_blank" class="shortlink">${linkData.short_link}</a>
+      <button class="copyBtn" data-link="${linkData.full_short_link}">Copy</button>
+    </div>
+  </div>
+`
