@@ -34,7 +34,8 @@ shortenBtn.addEventListener("click", async () => {
       shortenedDiv.insertAdjacentHTML("beforeend", shortenedLink)
     }
   } catch (error) {
-    console.error(error)
+    errorMessage.textContent = error.message
+    errorMessage.style.display = "block"
   }
 })
 
@@ -46,19 +47,62 @@ document.addEventListener("click", (event) => {
 })
 
 // Use concise arrow function syntax
+// const getShortlink = async (keyword) => {
+//   const response = await fetch(
+//     `https://api.shrtco.de/v2/shorten?url=${keyword}`
+//   )
+//   const data = await response.json()
+//   return data.result
+// }
+
 const getShortlink = async (keyword) => {
-  const response = await fetch(
-    `https://api.shrtco.de/v2/shorten?url=${keyword}`
-  )
+  const trimmedUrl = keyword.trim()
+  const formData = new URLSearchParams()
+  formData.append("url", trimmedUrl)
+
+  // const response = await fetch("https://cleanuri.com/api/v1/shorten", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/x-www-form-urlencoded",
+  //   },
+  //   body: formData.toString(),
+  // })
+
+  // const data = await response.json()
+
+  const response = await fetch("http://localhost:3000/shorten", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ url: keyword }),
+  })
   const data = await response.json()
-  return data.result
+
+  if (data.error) {
+    throw new Error(data.error)
+  }
+
+  // Return in the same structure your UI expects
+  return {
+    original_link: trimmedUrl,
+    full_short_link: data.result_url,
+  }
 }
+
+// const createShortenedLink = (linkData) => `
+//   <div class="shortened-link-wrapper">
+//     <p class="longVersion">${linkData.original_link}</p>
+//     <div class="link-wrapper">
+//       <a href="${linkData.full_short_link}" target="_blank" class="shortlink">${linkData.short_link}</a>
+//       <button class="copyBtn" data-link="${linkData.full_short_link}">Copy</button>
+//     </div>
+//   </div>
+// `
 
 const createShortenedLink = (linkData) => `
   <div class="shortened-link-wrapper">
     <p class="longVersion">${linkData.original_link}</p>
     <div class="link-wrapper">
-      <a href="${linkData.full_short_link}" target="_blank" class="shortlink">${linkData.short_link}</a>
+      <a href="${linkData.full_short_link}" target="_blank" class="shortlink">${linkData.full_short_link}</a>
       <button class="copyBtn" data-link="${linkData.full_short_link}">Copy</button>
     </div>
   </div>
